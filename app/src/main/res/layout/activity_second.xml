@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.pannam.animation.secondActivity" android:background="#DADADA">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" android:background="#FFFFFF"
+        android:id="@+id/container" android:padding="16dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:transitionName="profile_pic"
+            android:src="@drawable/photo1"
+            android:id="@+id/imageView" android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:transitionName="welcome"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/welcome_anna"
+            android:id="@+id/welcome"
+            android:layout_alignParentEnd="true" android:layout_alignTop="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_below="@+id/welcome"
+            android:layout_toEndOf="@+id/imageView">
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="All"
+                android:onClick="showAllScene"
+                android:layout_weight="0.33"
+                android:id="@+id/all"/>
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="0.33"
+                android:layout_height="wrap_content"
+                android:text="Office"
+                android:onClick="showOfficeScene"
+                android:id="@+id/office"/>
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="0dp"
+                android:layout_weight="0.33"
+                android:layout_height="wrap_content"
+                android:text="Gym"
+                android:onClick="showGymScene"
+                android:id="@+id/gym"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/scene_holder"
+        android:layout_height="wrap_content" android:layout_below="@+id/container"
+        android:layout_centerHorizontal="true" android:layout_margin="16dp"
+        android:background="#ffffff">
+
+        <include layout="@layout/all_scene"/>
+    </LinearLayout>
+</RelativeLayout>
